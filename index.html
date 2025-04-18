@@ -6,14 +6,12 @@
 
   <!-- Fonte pixelada do Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     body {
       font-family: 'Press Start 2P', monospace;
       color: #fff;
-      background-image: url('img/nakagamedev_background.png');
+      background-image: url('img/nakagamedev_background.png'); /* Caminho para a imagem */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -27,17 +25,11 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 40px;
-      background-color: rgba(0, 0, 0, 0.7);
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      border-radius: 16px;
+      background-color: rgba(0, 0, 0, 0.7); /* Camada escura translúcida */
+      box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra leve pra destacar ainda mais */
+      border-radius: 16px; /* Cantos arredondados */
       margin-top: 40px;
       margin-bottom: 40px;
-    }
-
-    #cubo-container {
-      width: 500px;
-      height: 500px;
-      margin: 20px auto;
     }
 
     img {
@@ -85,64 +77,7 @@
     </ul>
 
     <p>Se você curte jogos indie com desafio e personalidade, <strong>Ultra Pixel Survive</strong> é feito pra você.</p>
-
-    <!-- Cubo 3D com vídeos -->
-    <h2>🌀 Cubo 3D com vídeos</h2>
-    <div id="cubo-container"></div>
-
-    <video id="video1" loop autoplay muted style="display: none;">
-      <source src="img/video1.mp4" type="video/mp4">
-    </video>
-    <video id="video2" loop autoplay muted style="display: none;">
-      <source src="img/video2.mp4" type="video/mp4">
-    </video>
-    <video id="video3" loop autoplay muted style="display: none;">
-      <source src="img/video3.mp4" type="video/mp4">
-    </video>
-    <video id="video4" loop autoplay muted style="display: none;">
-      <source src="img/video4.mp4" type="video/mp4">
-    </video>
-    <video id="video5" loop autoplay muted style="display: none;">
-      <source src="img/video5.mp4" type="video/mp4">
-    </video>
-    <video id="video6" loop autoplay muted style="display: none;">
-      <source src="img/video6.mp4" type="video/mp4">
-    </video>
   </div>
-
-  <script>
-    // Configuração básica da cena
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(500, 500);
-    document.getElementById('cubo-container').appendChild(renderer.domElement);
-
-    // Geometria e material do cubo
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var materials = [
-      new THREE.MeshBasicMaterial({ map: new THREE.VideoTexture(document.getElementById('video1')) }),
-      new THREE.MeshBasicMaterial({ map: new THREE.VideoTexture(document.getElementById('video2')) }),
-      new THREE.MeshBasicMaterial({ map: new THREE.VideoTexture(document.getElementById('video3')) }),
-      new THREE.MeshBasicMaterial({ map: new THREE.VideoTexture(document.getElementById('video4')) }),
-      new THREE.MeshBasicMaterial({ map: new THREE.VideoTexture(document.getElementById('video5')) }),
-      new THREE.MeshBasicMaterial({ map: new THREE.VideoTexture(document.getElementById('video6')) }),
-    ];
-
-    var cube = new THREE.Mesh(geometry, materials);
-    scene.add(cube);
-    camera.position.z = 3;
-
-    // Função de animação
-    var animate = function () {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-
-    animate();
-  </script>
 
 </body>
 </html>
