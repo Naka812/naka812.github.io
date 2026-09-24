@@ -2,81 +2,274 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Naka Gamedev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naka Gamedev — Jogos feitos por um jogador!</title>
 
-  <!-- Fonte pixelada do Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Press Start 2P & VT323 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Press Start 2P', monospace;
-      color: #fff;
-      background-image: url('img/nakagamedev_background.png'); /* Caminho para a imagem */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+    :root {
+      --bg-overlay: rgba(13, 11, 24, 0.88);
+      --card-bg: rgba(22, 18, 38, 0.92);
+      --accent-gold: #ffcc00;
+      --accent-red: #ff3366;
+      --accent-green: #00ffcc;
+      --accent-purple: #9d4edd;
+      --text-color: #f0f0f0;
+      --border-color: #3a2e5c;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    .content {
-      text-align: center;
-      max-width: 800px;
+    body {
+      font-family: 'Press Start 2P', monospace;
+      color: var(--text-color);
+      background-color: #0b0914;
+      background-image: url('img/nakagamedev_background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      line-height: 1.8;
+      padding: 40px 15px;
+      font-size: 13px;
+    }
+
+    /* Container Principal */
+    .container {
+      max-width: 850px;
       margin: 0 auto;
-      padding: 40px;
-      background-color: rgba(0, 0, 0, 0.7); /* Camada escura translúcida */
-      box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Sombra leve pra destacar ainda mais */
-      border-radius: 16px; /* Cantos arredondados */
-      margin-top: 40px;
-      margin-bottom: 40px;
+      background: var(--bg-overlay);
+      border: 4px solid var(--border-color);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(157, 78, 221, 0.2);
+      border-radius: 12px;
+      padding: 40px 30px;
+      backdrop-filter: blur(4px);
     }
 
-    img {
-      max-width: 100%;
+    /* Header e Perfil */
+    .header-profile {
+      text-align: center;
+      margin-bottom: 35px;
     }
 
-    ul {
-      text-align: left;
-      display: inline-block;
+    .profile-avatar {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 4px solid var(--accent-gold);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+      margin-bottom: 20px;
     }
 
-    hr {
+    h1 {
+      font-size: 20px;
+      color: var(--accent-gold);
+      text-shadow: 3px 3px 0px #000;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: var(--accent-green);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bio {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      color: #d1d0db;
+      max-width: 650px;
+      margin: 0 auto 20px auto;
+      line-height: 1.4;
+    }
+
+    hr.pixel-divider {
       border: 0;
-      border-top: 2px dashed #888;
-      margin: 40px 0;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, var(--accent-gold) 0 10px, transparent 10px 20px);
+      margin: 35px 0;
+    }
+
+    /* Seções e Cards */
+    .section-title {
+      font-size: 16px;
+      color: var(--accent-green);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 0px #000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .banner-img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 3px solid var(--border-color);
+      margin: 15px 0 25px 0;
+    }
+
+    .game-description {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    /* Card Manifesto */
+    .manifesto-card {
+      background: rgba(255, 51, 102, 0.1);
+      border: 2px dashed var(--accent-red);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .manifesto-title {
+      font-size: 12px;
+      color: var(--accent-red);
+      margin-bottom: 10px;
+    }
+
+    .manifesto-text {
+      font-family: 'VT323', monospace;
+      font-size: 19px;
+      color: #fce4ec;
+      line-height: 1.4;
+    }
+
+    /* Lista de Recursos */
+    .feature-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 12px;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-gold);
+    }
+
+    /* Seção Outros Projetos */
+    .project-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 9px;
+      color: #7a7593;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px 10px;
+      }
+      .container {
+        padding: 25px 15px;
+      }
+      h1 {
+        font-size: 16px;
+      }
+      .section-title {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="content">
-    <img src="img/naka_profile.png" width="300" alt="naka gamedev" />
-    <h1>🎮 Naka Gamedev 🎮</h1>
-    <p>Jogos feitos por um jogador!</p>
+  <div class="container">
+    
+    <!-- Cabeçalho / Perfil -->
+    <header class="header-profile">
+      <img src="img/naka_profile.png" alt="Anderson Nakanome - Naka Gamedev" class="profile-avatar">
+      <h1>🎮 Anderson Nakanome 🎮</h1>
+      <p class="subtitle">Jogos feitos por um jogador!</p>
+      <p class="bio">
+        Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studios</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.
+      </p>
+    </header>
 
-    <p>Seja bem-vindo à página oficial do desenvolvedor <strong>Naka</strong>!</p>
-    <p>Aqui você encontra informações sobre meus jogos e projetos em andamento.</p>
+    <hr class="pixel-divider">
 
-    <hr>
+    <!-- Seção Principal: Ultra Pixel Survive -->
+    <section>
+      <h2 class="section-title">🕹️ Ultra Pixel Survive</h2>
+      <img src="img/ultrapixelsurvive_title.png" alt="Ultra Pixel Survive" class="banner-img">
 
-    <h2>🕹️ Sobre o jogo: Ultra Pixel Survive</h2>
-    <img src="img/ultrapixelsurvive_title.png" width="600" alt="Ultra Pixel Survive" />
+      <p class="game-description">
+        <strong>Ultra Pixel Survive</strong> é uma fusão de RPG de ação e sobrevivência em pixel art. O jogo desafia você a dominar heróis únicos, coletar recursos e erguer defesas contra hordas noturnas em um mundo de fantasia implacável.
+      </p>
 
-    <p><strong>Ultra Pixel Survive</strong> é um jogo que mistura RPG de ação e sobrevivência em um mundo retrô com arte em pixel. Desenvolvido pela GS Studios, o jogo desafia os jogadores a sobreviver o máximo de tempo possível em um ambiente hostil e cheio de perigos.</p>
-    <p>Você controla heróis com habilidades únicas, coleta recursos naturais como madeira, pedra e minérios, constrói defesas para proteger sua vila e enfrenta ondas de inimigos a cada noite. Além disso, é possível explorar masmorras subterrâneas, caçar, cozinhar e desbloquear novos personagens.</p>
+      <!-- Manifesto de Respeito -->
+      <div class="manifesto-card">
+        <h3 class="manifesto-title">📢 Manifesto de Respeito: Versão 1.1.1.2</h3>
+        <p class="manifesto-text">
+          Atualmente, o jogo passa por uma transformação importante: a remoção completa de anúncios intrusivos. Acredito em um modelo de jogo limpo, onde o foco é a diversão e a integridade da experiência do jogador.
+        </p>
+      </div>
 
-    <h3>✨ Principais recursos:</h3>
-    <ul>
-      <li>🏠 Construção e evolução de base</li>
-      <li>🛡️ Defesa da vila com torres e armadilhas</li>
-      <li>🌾 Agricultura, caça e culinária</li>
-      <li>🔓 Sistema de progressão com heróis únicos</li>
-      <li>🐲 Batalhas contra chefes em um mundo de fantasia épica</li>
-      <li>🧩 Estilo visual em pixel art nostálgico</li>
-    </ul>
+      <h3 style="font-size: 12px; color: var(--accent-gold); margin-top: 25px;">✨ Principais recursos:</h3>
+      <ul class="feature-list">
+        <li>🏠 Construção e evolução de base</li>
+        <li>🛡️ Defesa da vila com torres e armadilhas</li>
+        <li>🌾 Agricultura, caça e culinária</li>
+        <li>🔓 Sistema de progressão com heróis únicos</li>
+        <li>🐲 Batalhas contra chefes em um mundo de fantasia épica</li>
+        <li>🧩 Estilo visual em pixel art nostálgico</li>
+      </ul>
 
-    <p>Se você curte jogos indie com desafio e personalidade, <strong>Ultra Pixel Survive</strong> é feito pra você.</p>
+      <p class="game-description" style="margin-top: 15px;">
+        Se você curte jogos indie com desafio e personalidade, <strong>Ultra Pixel Survive</strong> é feito pra você.
+      </p>
+    </section>
+
+    <hr class="pixel-divider">
+
+    <!-- Outros Projetos -->
+    <section>
+      <h2 class="section-title">🎨 Outros Projetos & Ferramentas</h2>
+      
+      <div class="project-card">
+        <h3 style="font-size: 13px; color: var(--accent-purple); margin-bottom: 10px;">🖌️ Ultra Pixel (Em desenvolvimento)</h3>
+        <p class="game-description">
+          Meu próprio editor de pixel art profissional, construído para oferecer a precisão que desenvolvedores solo precisam. Projetado para unir um workflow ágil com ferramentas técnicas poderosas de edição.
+        </p>
+        <img src="img/screenshoot_ultrapixel_editor.png" alt="Ultra Pixel Editor" class="banner-img" style="margin-bottom: 0;">
+      </div>
+    </section>
+
+    <footer>
+      <p>© Gold Skull Studios — Todos os direitos reservados.</p>
+    </footer>
+
   </div>
 
 </body>
