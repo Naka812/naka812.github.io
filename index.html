@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naka Gamedev — Jogos feitos por um jogador!</title>
-<meta name="description" content="Página oficial de Anderson Nakanome, fundador da Gold Skull Studio. Ultra Pixel Survive e Ultra Pixel Editor.">
+<meta name="description" content="Página oficial de Anderson Nakanome, fundador da Gold Skull Studio. Ultra Pixel Survive e Ultra Pixel Editor, o editor de pixel art que roda no navegador.">
 <meta property="og:title" content="Naka Gamedev — Jogos feitos por um jogador!">
 <meta property="og:image" content="img/ultrapixelsurvive_title.png">
 <link rel="preconnect" href="https://play-lh.googleusercontent.com">
@@ -31,15 +31,18 @@ img{max-width:100%;height:auto;display:block}
 .nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
 .brand{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--gold);margin-right:auto}
 .brand img{width:36px;height:36px;border-radius:6px;border:2px solid var(--gold);object-fit:cover}
-.menu{display:flex;gap:26px}
+.menu{display:flex;gap:26px;align-items:center}
 .menu a{color:var(--muted);font-size:24px}
 .menu a:hover{color:var(--green)}
+.menu a.btn{color:#04241d;font-size:9px}
+.menu a.btn:hover{color:#04241d}
 
 /* Buttons */
 .btn{display:inline-block;font-family:'Press Start 2P',monospace;font-size:11px;padding:16px 22px;border:3px solid #000;border-radius:6px;cursor:pointer;transition:transform .1s,box-shadow .1s;box-shadow:4px 4px 0 #000}
 .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #000}
 .btn-sm{font-size:9px;padding:11px 14px}
 .btn-gold{background:var(--gold);color:#1a1300}
+.btn-green{background:var(--green);color:#04241d}
 .btn-ghost{background:transparent;color:var(--text);border-color:var(--green)}
 .btn-ghost:hover{background:rgba(0,255,204,.12)}
 
@@ -82,8 +85,13 @@ h2{font-size:clamp(15px,2.4vw,21px);color:var(--green);text-shadow:2px 2px 0 #00
 .gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 4px 18px;margin-top:4px}
 .gallery img{flex:0 0 min(78%,520px);height:auto;aspect-ratio:16/9;object-fit:cover;scroll-snap-align:center;border:3px solid var(--line);border-radius:10px;background:var(--panel)}
 .gallery::-webkit-scrollbar{height:10px}.gallery::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
+
 /* Editor section */
-.wip{display:inline-block;font-size:9px;background:var(--purple);color:#fff;padding:6px 10px;border-radius:4px;margin-bottom:14px}
+.live{display:inline-block;font-size:9px;background:var(--green);color:#04241d;padding:6px 10px;border-radius:4px;margin-bottom:14px}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.chips li{font-size:20px;color:var(--text);background:var(--panel);border:2px solid var(--line);border-radius:6px;padding:4px 12px}
+.editor-shot{display:grid;gap:18px;justify-items:center}
+.editor-shot .shot{width:100%}
 
 /* Final CTA */
 .final{text-align:center;background:linear-gradient(135deg,rgba(157,78,221,.35),rgba(255,51,102,.2));border-block:3px solid var(--line)}
@@ -93,7 +101,7 @@ footer{padding:40px 0;text-align:center;font-size:9px;color:#8d88a8;background:r
 footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
 
 @media (max-width:860px){
-  .menu{display:none}
+  .menu a:not(.btn){display:none}
   .split,.grid{grid-template-columns:1fr}
   .split.rev .txt{order:0}
   .manifesto{grid-template-columns:1fr}
@@ -113,6 +121,7 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
       <a href="#capturas">Capturas</a>
       <a href="#recursos">Recursos</a>
       <a href="#editor">Ultra Pixel</a>
+      <a class="btn btn-green btn-sm" href="https://naka812.github.io/ultra-pixel/">Abrir o editor</a>
     </nav>
   </div>
 </header>
@@ -126,6 +135,7 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
       <p class="bio">Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studio</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.</p>
       <div class="cta">
         <a class="btn btn-gold" href="#jogo">Conhecer o jogo</a>
+        <a class="btn btn-ghost" href="https://naka812.github.io/ultra-pixel/">Abrir o editor de pixel art</a>
       </div>
     </div>
   </div>
@@ -200,11 +210,24 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
     <div class="wrap">
       <div class="split rev">
         <div class="txt">
-          <span class="wip px">EM DESENVOLVIMENTO</span>
+          <span class="live px">JÁ DISPONÍVEL</span>
           <h2 class="px">Ultra Pixel Editor</h2>
-          <p>Meu próprio editor de pixel art profissional, feito para dar a precisão que desenvolvedores solo precisam. Une um fluxo de trabalho ágil a ferramentas técnicas poderosas de edição.</p>
+          <p>Meu próprio editor de pixel art profissional, feito para dar a precisão que desenvolvedores solo precisam. Roda direto no navegador, sem instalar nada, e une um fluxo de trabalho ágil a ferramentas técnicas poderosas de edição.</p>
+          <ul class="chips" aria-label="Recursos do editor">
+            <li>Camadas</li>
+            <li>Paletas de cores</li>
+            <li>Harmonia de cores</li>
+            <li>Animação com linha do tempo</li>
+            <li>Onion skin</li>
+            <li>Exporta GIF</li>
+            <li>Sprite sheet</li>
+            <li>Português e inglês</li>
+          </ul>
         </div>
-        <img class="shot" src="img/screenshoot_ultrapixel_editor.png" alt="Ultra Pixel Editor">
+        <div class="editor-shot">
+          <img class="shot" src="img/screenshoot_ultrapixel_editor.png" alt="Ultra Pixel Editor">
+          <a class="btn btn-green" href="https://naka812.github.io/ultra-pixel/">Abrir o Ultra Pixel Editor</a>
+        </div>
       </div>
     </div>
   </section>
