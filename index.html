@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naka Gamedev — Jogos feitos por um jogador!</title>
-<meta name="description" content="Página oficial de Anderson Nakanome, fundador da Gold Skull Studios. Ultra Pixel Survive e Ultra Pixel Editor.">
+<meta name="description" content="Página oficial de Anderson Nakanome, fundador da Gold Skull Studio. Ultra Pixel Survive e Ultra Pixel Editor.">
 <meta property="og:title" content="Naka Gamedev — Jogos feitos por um jogador!">
 <meta property="og:image" content="img/ultrapixelsurvive_title.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +37,7 @@ img{max-width:100%;height:auto;display:block}
 /* Buttons */
 .btn{display:inline-block;font-family:'Press Start 2P',monospace;font-size:11px;padding:16px 22px;border:3px solid #000;border-radius:6px;cursor:pointer;transition:transform .1s,box-shadow .1s;box-shadow:4px 4px 0 #000}
 .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #000}
+.btn-sm{font-size:9px;padding:11px 14px}
 .btn-gold{background:var(--gold);color:#1a1300}
 .btn-ghost{background:transparent;color:var(--text);border-color:var(--green)}
 .btn-ghost:hover{background:rgba(0,255,204,.12)}
@@ -103,6 +104,7 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
       <a href="#recursos">Recursos</a>
       <a href="#editor">Ultra Pixel</a>
     </nav>
+    <a class="btn btn-gold btn-sm" href="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=pt_BR" target="_blank" rel="noopener">Google Play</a>
   </div>
 </header>
 
@@ -112,10 +114,10 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
       <img src="img/naka_profile.png" alt="Anderson Nakanome - Naka Gamedev" class="avatar">
       <h1 class="px">Anderson Nakanome</h1>
       <p class="sub px">Jogos feitos por um jogador!</p>
-      <p class="bio">Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studios</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.</p>
+      <p class="bio">Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studio</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.</p>
       <div class="cta">
-        <a class="btn btn-gold" href="#jogo">Conhecer o jogo</a>
-        <a class="btn btn-ghost" href="#editor">Ver o editor</a>
+        <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=pt_BR" target="_blank" rel="noopener">Baixar na Google Play</a>
+        <a class="btn btn-ghost" href="#jogo">Conhecer o jogo</a>
       </div>
     </div>
   </div>
@@ -127,7 +129,10 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
           <span class="tag px">Jogo principal</span>
           <h2 class="px">Ultra Pixel Survive</h2>
           <p>Uma fusão de RPG de ação e sobrevivência em pixel art. Domine heróis únicos, colete recursos e erga defesas contra hordas noturnas em um mundo de fantasia implacável.</p>
-          <a class="btn btn-gold" href="#recursos">Ver recursos</a>
+          <div class="cta" style="justify-content:flex-start">
+            <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=pt_BR" target="_blank" rel="noopener">Jogar na Google Play</a>
+            <a class="btn btn-ghost" href="#recursos">Ver recursos</a>
+          </div>
         </div>
         <img class="shot" src="img/ultrapixelsurvive_title.png" alt="Ultra Pixel Survive">
       </div>
@@ -176,15 +181,15 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
   <section class="final">
     <div class="wrap">
       <h2 class="px">Jogos feitos por um jogador</h2>
-      <p>Sem anúncios intrusivos, com foco na diversão. Acompanhe os próximos passos da Gold Skull Studios.</p>
-      <a class="btn btn-gold" href="#jogo">Voltar ao jogo</a>
+      <p>Sem anúncios intrusivos, com foco na diversão. Baixe agora na Google Play e acompanhe os próximos passos da Gold Skull Studio.</p>
+      <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=pt_BR" target="_blank" rel="noopener">Baixar Ultra Pixel Survive</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <p class="px">GOLD SKULL STUDIOS</p>
-  <p>© Gold Skull Studios — Todos os direitos reservados.</p>
+  <p class="px">GOLD SKULL STUDIO</p>
+  <p>© Gold Skull Studio — Todos os direitos reservados.</p>
 </footer>
 
 </body>
