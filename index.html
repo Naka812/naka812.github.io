@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naka Gamedev — Jogos feitos por um jogador!</title>
-<meta name="description" content="Página oficial de Anderson Nakanome, fundador da Gold Skull Studio. Ultra Pixel Survive e Ultra Pixel Editor, o editor de pixel art que roda no navegador.">
+<meta name="description" content="Página oficial de Anderson Nakanome, fundador da Gold Skull Studio. Ultra Pixel Survive e Ultra Pixel Editor, o editor de pixel art que roda no navegador de PC.">
 <meta property="og:title" content="Naka Gamedev — Jogos feitos por um jogador!">
 <meta property="og:image" content="img/ultrapixelsurvive_title.png">
 <link rel="preconnect" href="https://play-lh.googleusercontent.com">
@@ -90,6 +90,9 @@ h2{font-size:clamp(15px,2.4vw,21px);color:var(--green);text-shadow:2px 2px 0 #00
 .live{display:inline-block;font-size:9px;background:var(--green);color:#04241d;padding:6px 10px;border-radius:4px;margin-bottom:14px}
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
 .chips li{font-size:20px;color:var(--text);background:var(--panel);border:2px solid var(--line);border-radius:6px;padding:4px 12px}
+.txt p.aviso{font-size:22px;color:#fff3cd;background:rgba(255,204,0,.12);border:3px solid var(--gold);border-radius:8px;padding:12px 16px;margin-bottom:24px}
+.aviso strong{color:var(--gold);font-weight:400}
+.nota-pc{font-size:20px;color:var(--gold);text-align:center}
 .editor-shot{display:grid;gap:18px;justify-items:center}
 .editor-shot .shot{width:100%}
 
@@ -135,7 +138,7 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
       <p class="bio">Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studio</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.</p>
       <div class="cta">
         <a class="btn btn-gold" href="#jogo">Conhecer o jogo</a>
-        <a class="btn btn-ghost" href="https://naka812.github.io/ultra-pixel/">Abrir o editor de pixel art</a>
+        <a class="btn btn-ghost" href="https://naka812.github.io/ultra-pixel/">Abrir o editor de pixel art (só no PC)</a>
       </div>
     </div>
   </div>
@@ -213,6 +216,7 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
           <span class="live px">JÁ DISPONÍVEL</span>
           <h2 class="px">Ultra Pixel Editor</h2>
           <p>Meu próprio editor de pixel art profissional, feito para dar a precisão que desenvolvedores solo precisam. Roda direto no navegador, sem instalar nada, e une um fluxo de trabalho ágil a ferramentas técnicas poderosas de edição.</p>
+          <p class="aviso"><strong>Atenção:</strong> o editor funciona somente no navegador de computador (PC). Ele não é compatível com celulares e tablets.</p>
           <ul class="chips" aria-label="Recursos do editor">
             <li>Camadas</li>
             <li>Paletas de cores</li>
@@ -227,6 +231,7 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
         <div class="editor-shot">
           <img class="shot" src="img/screenshoot_ultrapixel_editor.png" alt="Ultra Pixel Editor">
           <a class="btn btn-green" href="https://naka812.github.io/ultra-pixel/">Abrir o Ultra Pixel Editor</a>
+          <p class="nota-pc">💻 Somente no navegador de PC</p>
         </div>
       </div>
     </div>
