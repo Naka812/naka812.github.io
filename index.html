@@ -93,6 +93,9 @@ h2{font-size:clamp(15px,2.4vw,21px);color:var(--green);text-shadow:2px 2px 0 #00
 .txt p.aviso{font-size:22px;color:#fff3cd;background:rgba(255,204,0,.12);border:3px solid var(--gold);border-radius:8px;padding:12px 16px;margin-bottom:24px}
 .aviso strong{color:var(--gold);font-weight:400}
 .nota-pc{font-size:20px;color:var(--gold);text-align:center}
+.lang{display:flex;gap:6px}
+.lang button{font-family:'Press Start 2P',monospace;font-size:9px;padding:9px 10px;border:2px solid var(--line);background:transparent;color:var(--muted);border-radius:4px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:#1a1300;border-color:var(--gold)}
 .editor-shot{display:grid;gap:18px;justify-items:center}
 .editor-shot .shot{width:100%}
 
@@ -120,11 +123,12 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
   <div class="wrap">
     <a class="brand px" href="#topo"><img src="img/naka_profile.png" alt="">NAKA GAMEDEV</a>
     <nav class="menu" aria-label="Principal">
-      <a href="#jogo">O jogo</a>
-      <a href="#capturas">Capturas</a>
-      <a href="#recursos">Recursos</a>
+      <a href="#jogo" data-i18n="nav_game">O jogo</a>
+      <a href="#capturas" data-i18n="nav_shots">Capturas</a>
+      <a href="#recursos" data-i18n="nav_feat">Recursos</a>
       <a href="#editor">Ultra Pixel</a>
-      <a class="btn btn-green btn-sm" href="https://naka812.github.io/ultra-pixel/">Abrir o editor</a>
+      <a class="btn btn-green btn-sm" href="https://naka812.github.io/ultra-pixel/" data-i18n="nav_editor">Abrir o editor</a>
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
     </nav>
   </div>
 </header>
@@ -134,11 +138,11 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
     <div class="wrap">
       <img src="img/naka_profile.png" alt="Anderson Nakanome - Naka Gamedev" class="avatar">
       <h1 class="px">Anderson Nakanome</h1>
-      <p class="sub px">Jogos feitos por um jogador!</p>
-      <p class="bio">Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studio</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.</p>
+      <p class="sub px" data-i18n="sub">Jogos feitos por um jogador!</p>
+      <p class="bio" data-i18n="bio">Seja bem-vindo à página oficial de <strong>Anderson Nakanome</strong>, fundador da <strong>Gold Skull Studio</strong> e desenvolvedor independente focado em experiências autênticas de sobrevivência e RPG.</p>
       <div class="cta">
-        <a class="btn btn-gold" href="#jogo">Conhecer o jogo</a>
-        <a class="btn btn-ghost" href="https://naka812.github.io/ultra-pixel/">Abrir o editor de pixel art (só no PC)</a>
+        <a class="btn btn-gold" href="#jogo" data-i18n="cta_game">Conhecer o jogo</a>
+        <a class="btn btn-ghost" href="https://naka812.github.io/ultra-pixel/" data-i18n="cta_editor">Abrir o editor de pixel art (só no PC)</a>
       </div>
     </div>
   </div>
@@ -147,26 +151,26 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
     <div class="wrap">
       <div class="split">
         <div class="txt">
-          <span class="tag px">Jogo principal</span>
+          <span class="tag px" data-i18n="tag_game">Jogo principal</span>
           <h2 class="px">Ultra Pixel Survive</h2>
-          <p>Uma fusão de RPG de ação e sobrevivência em pixel art. Domine heróis únicos, colete recursos e erga defesas contra hordas noturnas em um mundo de fantasia implacável.</p>
+          <p data-i18n="game_desc">Uma fusão de RPG de ação e sobrevivência em pixel art. Domine heróis únicos, colete recursos e erga defesas contra hordas noturnas em um mundo de fantasia implacável.</p>
           <ul class="stats">
-            <li><b class="px">4,7★</b>35 mil avaliações</li>
-            <li><b class="px">500 mil+</b>downloads</li>
-            <li><b class="px">Android</b>e Windows</li>
+            <li><b class="px" data-i18n="s1">4,7★</b><span data-i18n="s1t">35 mil avaliações</span></li>
+            <li><b class="px" data-i18n="s2">500 mil+</b><span data-i18n="s2t">downloads</span></li>
+            <li><b class="px">Android</b><span data-i18n="s3t">e Windows</span></li>
           </ul>
         </div>
         <div class="showcase">
           <img class="shot" src="img/ultrapixelsurvive_title.png" alt="Ultra Pixel Survive">
-          <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=pt_BR" target="_blank" rel="noopener">Baixar na Google Play</a>
+          <a class="btn btn-gold" href="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=pt_BR" target="_blank" rel="noopener" data-i18n="play" data-href-en="https://play.google.com/store/apps/details?id=com.goldskullstudios.ultrapixelsurvive&amp;hl=en_US">Baixar na Google Play</a>
         </div>
       </div>
 
       <div class="manifesto">
         <div class="ic" aria-hidden="true">📢</div>
         <div>
-          <h3 class="px">Manifesto de respeito · versão 1.1.1.4</h3>
-          <p>O jogo passa por uma transformação importante: a remoção completa de anúncios intrusivos. Acredito em um modelo de jogo limpo, onde o foco é a diversão e a integridade da experiência do jogador.</p>
+          <h3 class="px" data-i18n="manifesto_h">Manifesto de respeito · versão 1.1.1.4</h3>
+          <p data-i18n="manifesto_p">O jogo passa por uma transformação importante: a remoção completa de anúncios intrusivos. Acredito em um modelo de jogo limpo, onde o foco é a diversão e a integridade da experiência do jogador.</p>
         </div>
       </div>
     </div>
@@ -175,10 +179,10 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
   <section id="capturas">
     <div class="wrap">
       <div class="center">
-        <span class="tag px">Capturas de tela</span>
-        <h2 class="px">Veja o jogo em ação</h2>
+        <span class="tag px" data-i18n="tag_shots">Capturas de tela</span>
+        <h2 class="px" data-i18n="shots_h">Veja o jogo em ação</h2>
       </div>
-      <div class="gallery" tabindex="0" aria-label="Capturas de tela do jogo, role para o lado">
+      <div class="gallery" data-i18n-aria="gallery_aria" tabindex="0" aria-label="Capturas de tela do jogo, role para o lado">
         <img src="https://play-lh.googleusercontent.com/JVhAMxVgcGcRTbFfLQten9x_2mif7_ncQ046fpAfm71ebb5BeQhw4DQVZ_UqP2Pfbt-9iPQDKOg8UNW44ad1SQ=w800-h450" alt="Captura de tela 1 de Ultra Pixel Survive" width="800" height="450" loading="lazy">
         <img src="https://play-lh.googleusercontent.com/uHAx1RD2oj_vVS-17bxwSNWbXP86YoZQRdLESZ7rl4btFmfLEHPJ2Vkc7gAMDPfrRnSvpTHGo10weWF7qh5Meg=w800-h450" alt="Captura de tela 2 de Ultra Pixel Survive" width="800" height="450" loading="lazy">
         <img src="https://play-lh.googleusercontent.com/AOwPe63-tOk0yyTwECPK4wRCY9pSiAt2O59bijnjKRFHrkbrTeSXZFpF7G088W5jjpibFLPihzH9nTS5sANgDaM=w800-h450" alt="Captura de tela 3 de Ultra Pixel Survive" width="800" height="450" loading="lazy">
@@ -194,18 +198,18 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
   <section id="recursos">
     <div class="wrap">
       <div class="center">
-        <span class="tag px">Principais recursos</span>
-        <h2 class="px">Tudo o que você precisa para sobreviver</h2>
+        <span class="tag px" data-i18n="tag_feat">Principais recursos</span>
+        <h2 class="px" data-i18n="feat_h">Tudo o que você precisa para sobreviver</h2>
       </div>
       <div class="grid">
-        <div class="card"><div class="e">🏠</div><p>Construção e evolução de base</p></div>
-        <div class="card"><div class="e">🛡️</div><p>Defesa da vila com torres e armadilhas</p></div>
-        <div class="card"><div class="e">🌾</div><p>Agricultura, caça e culinária</p></div>
-        <div class="card"><div class="e">🔓</div><p>Sistema de progressão com heróis únicos</p></div>
-        <div class="card"><div class="e">🐲</div><p>Batalhas contra chefes em um mundo de fantasia épica</p></div>
-        <div class="card"><div class="e">🧩</div><p>Estilo visual em pixel art nostálgico</p></div>
+        <div class="card"><div class="e">🏠</div><p data-i18n="f1">Construção e evolução de base</p></div>
+        <div class="card"><div class="e">🛡️</div><p data-i18n="f2">Defesa da vila com torres e armadilhas</p></div>
+        <div class="card"><div class="e">🌾</div><p data-i18n="f3">Agricultura, caça e culinária</p></div>
+        <div class="card"><div class="e">🔓</div><p data-i18n="f4">Sistema de progressão com heróis únicos</p></div>
+        <div class="card"><div class="e">🐲</div><p data-i18n="f5">Batalhas contra chefes em um mundo de fantasia épica</p></div>
+        <div class="card"><div class="e">🧩</div><p data-i18n="f6">Estilo visual em pixel art nostálgico</p></div>
       </div>
-      <p class="center" style="margin-top:36px;color:var(--muted);font-size:24px">Se você curte jogos indie com desafio e personalidade, <strong style="color:var(--gold)">Ultra Pixel Survive</strong> é feito pra você.</p>
+      <p class="center" data-i18n="features_note" style="margin-top:36px;color:var(--muted);font-size:24px">Se você curte jogos indie com desafio e personalidade, <strong style="color:var(--gold)">Ultra Pixel Survive</strong> é feito pra você.</p>
     </div>
   </section>
 
@@ -213,25 +217,25 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
     <div class="wrap">
       <div class="split rev">
         <div class="txt">
-          <span class="live px">JÁ DISPONÍVEL</span>
+          <span class="live px" data-i18n="live">JÁ DISPONÍVEL</span>
           <h2 class="px">Ultra Pixel Editor</h2>
-          <p>Meu próprio editor de pixel art profissional, feito para dar a precisão que desenvolvedores solo precisam. Roda direto no navegador, sem instalar nada, e une um fluxo de trabalho ágil a ferramentas técnicas poderosas de edição.</p>
-          <p class="aviso"><strong>Atenção:</strong> o editor funciona somente no navegador de computador (PC). Ele não é compatível com celulares e tablets.</p>
+          <p data-i18n="editor_desc">Meu próprio editor de pixel art profissional, feito para dar a precisão que desenvolvedores solo precisam. Roda direto no navegador, sem instalar nada, e une um fluxo de trabalho ágil a ferramentas técnicas poderosas de edição.</p>
+          <p class="aviso" data-i18n="editor_warn"><strong>Atenção:</strong> o editor funciona somente no navegador de computador (PC). Ele não é compatível com celulares e tablets.</p>
           <ul class="chips" aria-label="Recursos do editor">
-            <li>Camadas</li>
-            <li>Paletas de cores</li>
-            <li>Harmonia de cores</li>
-            <li>Animação com linha do tempo</li>
-            <li>Onion skin</li>
-            <li>Exporta GIF</li>
-            <li>Sprite sheet</li>
-            <li>Português e inglês</li>
+            <li data-i18n="c1">Camadas</li>
+            <li data-i18n="c2">Paletas de cores</li>
+            <li data-i18n="c3">Harmonia de cores</li>
+            <li data-i18n="c4">Animação com linha do tempo</li>
+            <li data-i18n="c5">Onion skin</li>
+            <li data-i18n="c6">Exporta GIF</li>
+            <li data-i18n="c7">Sprite sheet</li>
+            <li data-i18n="c8">Português e inglês</li>
           </ul>
         </div>
         <div class="editor-shot">
           <img class="shot" src="img/screenshoot_ultrapixel_editor.png" alt="Ultra Pixel Editor">
-          <a class="btn btn-green" href="https://naka812.github.io/ultra-pixel/">Abrir o Ultra Pixel Editor</a>
-          <p class="nota-pc">💻 Somente no navegador de PC</p>
+          <a class="btn btn-green" href="https://naka812.github.io/ultra-pixel/" data-i18n="editor_btn">Abrir o Ultra Pixel Editor</a>
+          <p class="nota-pc" data-i18n="nota_pc">💻 Somente no navegador de PC</p>
         </div>
       </div>
     </div>
@@ -241,8 +245,42 @@ footer .px{margin-bottom:10px;color:var(--gold);font-size:11px}
 
 <footer>
   <p class="px">GOLD SKULL STUDIO</p>
-  <p>© Gold Skull Studio — Todos os direitos reservados.</p>
+  <p data-i18n="footer">© Gold Skull Studio — Todos os direitos reservados.</p>
 </footer>
 
+<script>
+(function(){
+  var EN={"nav_game": "The game", "nav_shots": "Screenshots", "nav_feat": "Features", "nav_editor": "Open the editor", "sub": "Games made by a gamer!", "bio": "Welcome to the official page of <strong>Anderson Nakanome</strong>, founder of <strong>Gold Skull Studio</strong> and an indie developer focused on authentic survival and RPG experiences.", "cta_game": "Discover the game", "cta_editor": "Open the pixel art editor (PC only)", "tag_game": "Main game", "game_desc": "A fusion of action RPG and survival in pixel art. Master unique heroes, gather resources and build defenses against nightly hordes in a relentless fantasy world.", "s1": "4.7★", "s1t": "35K reviews", "s2": "500K+", "s2t": "downloads", "s3t": "and Windows", "play": "Get it on Google Play", "manifesto_h": "Respect manifesto · version 1.1.1.4", "manifesto_p": "The game is going through an important transformation: the complete removal of intrusive ads. I believe in a clean game model, where the focus is on fun and the integrity of the player experience.", "tag_shots": "Screenshots", "shots_h": "See the game in action", "gallery_aria": "Game screenshots, scroll sideways", "tag_feat": "Key features", "feat_h": "Everything you need to survive", "f1": "Base building and upgrades", "f2": "Village defense with towers and traps", "f3": "Farming, hunting and cooking", "f4": "Progression system with unique heroes", "f5": "Boss battles in an epic fantasy world", "f6": "Nostalgic pixel art visual style", "features_note": "If you enjoy indie games with challenge and personality, <strong style=\"color:var(--gold)\">Ultra Pixel Survive</strong> is made for you.", "live": "AVAILABLE NOW", "editor_desc": "My own professional pixel art editor, built to give solo developers the precision they need. It runs right in the browser, with nothing to install, and combines an agile workflow with powerful technical editing tools.", "editor_warn": "<strong>Note:</strong> the editor works only in a desktop (PC) browser. It is not compatible with phones and tablets.", "c1": "Layers", "c2": "Color palettes", "c3": "Color harmony", "c4": "Timeline animation", "c5": "Onion skin", "c6": "GIF export", "c7": "Sprite sheet", "c8": "Portuguese and English", "editor_btn": "Open Ultra Pixel Editor", "nota_pc": "💻 Desktop (PC) browser only", "footer": "© Gold Skull Studio — All rights reserved."};
+  var EN_TITLE='Naka Gamedev — Games made by a gamer!';
+  var EN_DESC='Official page of Anderson Nakanome, founder of Gold Skull Studio. Ultra Pixel Survive and Ultra Pixel Editor, the pixel art editor that runs in a desktop browser.';
+  var EN_ALT='Screenshot {n} of Ultra Pixel Survive';
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  els.forEach(function(e){e.setAttribute('data-pt',e.innerHTML);});
+  var gal=document.querySelector('[data-i18n-aria]');
+  var ptAria=gal.getAttribute('aria-label');
+  var shots=[].slice.call(gal.querySelectorAll('img'));
+  var ptAlts=shots.map(function(i){return i.alt;});
+  var play=document.querySelector('[data-href-en]');
+  var ptHref=play.getAttribute('href');
+  var meta=document.querySelector('meta[name="description"]');
+  var ptTitle=document.title, ptDesc=meta.getAttribute('content');
+  function setLang(l){
+    var en=l==='en';
+    els.forEach(function(e){e.innerHTML=en?EN[e.getAttribute('data-i18n')]:e.getAttribute('data-pt');});
+    gal.setAttribute('aria-label',en?EN.gallery_aria:ptAria);
+    shots.forEach(function(i,k){i.alt=en?EN_ALT.replace('{n}',k+1):ptAlts[k];});
+    play.setAttribute('href',en?play.getAttribute('data-href-en'):ptHref);
+    document.title=en?EN_TITLE:ptTitle;
+    meta.setAttribute('content',en?EN_DESC:ptDesc);
+    document.documentElement.lang=en?'en':'pt-BR';
+    [].slice.call(document.querySelectorAll('[data-lang]')).forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+    try{localStorage.setItem('lang',l);}catch(e){}
+  }
+  [].slice.call(document.querySelectorAll('[data-lang]')).forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));});});
+  var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
+  var start=saved||((navigator.language||'pt').toLowerCase().indexOf('pt')===0?'pt':'en');
+  if(start==='en')setLang('en');
+})();
+</script>
 </body>
 </html>
